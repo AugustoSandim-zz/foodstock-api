@@ -9,7 +9,7 @@
 
 >git clone git@bitbucket.org:jerasoftware/balad-web.git balad
 
->echo "ruby-2.2.0" > .ruby-version
+>echo "ruby-2.2.1" > .ruby-version
 
 >echo "foodstock-api" > .ruby-gemset
 
