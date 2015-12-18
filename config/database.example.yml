@@ -7,18 +7,18 @@ development:
   adapter: mysql2
   host: localhost
   username: root
-  password: "root"
-  database: foodstock_development
+  password: "123456"
+  database: balad_development
 
 test:
   <<: *default
   adapter: sqlite3
-  database: db/foodstock_test.sqlite3
+  database: db/balad_test.sqlite3
 
 production:
   <<: *default
   adapter: mysql2
   host: localhost
   username: root
-  password: "root"
-  database: foodstock_production
+  password: "123456"
+  database: balad_production
