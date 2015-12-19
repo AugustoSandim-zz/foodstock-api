@@ -39,4 +39,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  Paperclip::Attachment.default_options[:url] = "http://localhost:3000"
+  Paperclip::Attachment.default_options[:path] = "spec/support/uploads/:class/:id_partition/:style.:extension"
+  Paperclip::Attachment.default_options[:use_timestamp] = false
+
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
+  config.action_mailer.asset_host = "http://localhost:3000"
+
+  Rails.application.routes.default_url_options[:host] = "http://localhost:3000"
 end
