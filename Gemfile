@@ -10,7 +10,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "paperclip"
+gem 'paperclip'
+
+gem 'active_model_serializers'
+gem 'enumerize'
+gem 'has_scope'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'
