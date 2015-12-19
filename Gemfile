@@ -15,8 +15,16 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'responders', '~> 2.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do
 	gem 'sqlite3'
+	gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'database_cleaner'
+  gem 'airborne'
 end
