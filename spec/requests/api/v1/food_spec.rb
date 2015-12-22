@@ -12,7 +12,7 @@ RSpec.describe Food, type: :request do
 		expect(json["foods"].length).to eq(10)
 	end
 
-	it "return a food created" do
+	it "return when a food has been created" do
 		category = create(:category)
 		food1 = create(:food, category_id: category.id)
 		params = food1.attributes.except('id', 'created_at', 'updated_at')
@@ -23,6 +23,12 @@ RSpec.describe Food, type: :request do
 		expect(json["food"]["id"]).to be_present
 		expect(json["food"]["name"]).to be_present
 		expect(json["food"]["expiration_date"]).to be_present
+	end
+
+	it "return when a food has been destroyed" do
+		delete "/v1/foods/#{food.id}"
+
+		expect(response.status).to eq(204)
 	end
 
 end
