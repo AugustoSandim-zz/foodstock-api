@@ -10,7 +10,7 @@ class Api::V1::FoodsController < Api::ApiController
 		@food = Food.create(food_params)
 
 		if @food.save
-			return render json: { message: "Food created" }, status: 201
+			return render json: @food, serializer: FoodSerializer, status: 201
 		else
 			return render json: {}, status: 422
 		end
@@ -44,8 +44,8 @@ class Api::V1::FoodsController < Api::ApiController
 
 	private 
 		def food_params
-			params.fetch(:food, {}).permit(:name, :expiration_date, :brand, :quantity, :weight, 
-				:category)	
+			params.permit(:name, :expiration_date, :brand, :quantity, :weight, 
+				:category_id)	
 		end
 
 end
