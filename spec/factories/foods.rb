@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :food do
-    name "MyString"
-expiration_date "2015-12-21 22:49:40"
-brand "MyString"
-quantity 1
-weight 1.5
+    name { Faker::Name.name }
+		expiration_date { Faker::Date.backward(14) }
+		brand { Faker::Company.buzzword }
+		quantity { Faker::Number.number(5) }	
+		weight { Faker::Number.decimal(1, 1) }
   end
 
 end
